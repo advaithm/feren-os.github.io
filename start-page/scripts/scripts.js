@@ -4,20 +4,17 @@ var eng = {},
     searchPrefix = "Search ",
     UA = navigator.userAgent;
 
-
 function setCookie(name, value) {
-    function setCookie(name, value) {
-        let expires = "";
-        let policy = "";
-        expires = "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-        policy = "; SameSite=Lax; Secure";
-        console.log(location.hostname);
-        if (location.hostname == "localhost" || "0.0.0.0") {
-            console.log("Using Localhost");
-            policy = "; SameSite=Lax;";
-        }
-        document.cookie = name + "=" + (value || "") + expires + policy;
+    let expires = "";
+    let policy = "";
+    expires = "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+    policy = "; SameSite=Lax; Secure";
+    console.log(location.hostname);
+    if (location.hostname == "localhost" || "0.0.0.0") {
+        console.log("Using Localhost");
+        policy = "; SameSite=Lax;";
     }
+    document.cookie = name + "=" + (value || "") + expires + policy;
 }
 
 function getCookie(cname) {
